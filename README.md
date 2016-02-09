@@ -2,7 +2,7 @@
 
 [Tvheadend](https://tvheadend.org/)
 
-**Application description**
+**Description**
 
 Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. Tvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming. Multiple EPG sources are supported (over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML).
 
@@ -18,6 +18,8 @@ docker run -d \
     -v <path for data files>:/data \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    -e UID=<user id for user> \
+    -e GID=<group id for user> \
     binhex/arch-tvheadend
 ```
 
@@ -35,7 +37,15 @@ docker run -d \
     -v /apps/docker/tvheadend/recorded:/data \
     -v /apps/docker/tvheadend:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    -e UID=0 \
+    -e GID=0 \
     binhex/arch-tvheadend
+```
+
+User ID (UID) and Group ID (GID) can be found by issuing the following command for the user you want to run the container as:-
+
+```
+id <username>
 ```
 
 **Notes**
