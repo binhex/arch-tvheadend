@@ -10,8 +10,8 @@ pacman -Syu --ignore filesystem --noconfirm
 source /root/packer.sh
 
 # set permissions
-chown -R nobody:users /usr/bin/tvheadend /run/tvheadend.pid
-chmod -R 775 /usr/bin/tvheadend /run/tvheadend.pid
+chown -R nobody:users /usr/bin/tvheadend
+chmod -R 775 /usr/bin/tvheadend
 
 # cleanup
 yes|pacman -Scc
