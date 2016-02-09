@@ -23,14 +23,14 @@ RUN chmod +x /root/*.sh && \
 # map /config to host defined config path (used to store configuration from app)
 VOLUME /config
 
-# map /data to host defined data path (used to store downloads or use blackhole)
+# map /data to host defined data path (used to store tv recordings)
 VOLUME /data
 
 # expose port for http
 EXPOSE 9981
 
-# run supervisor
-################
+# set permissions
+#################
 
-# run supervisor
-CMD ["supervisord", "-c", "/etc/supervisor.conf", "-n"]
+# run script to set uid, gid and permissions
+CMD ["/bin/bash", "/root/init.sh"]

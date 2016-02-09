@@ -9,10 +9,6 @@ pacman -Syu --ignore filesystem --noconfirm
 # call aur packer script
 source /root/packer.sh
 
-# set permissions
-chown -R nobody:users /usr/bin/tvheadend /run
-chmod -R 775 /usr/bin/tvheadend /run
-
 # cleanup
 yes|pacman -Scc
 rm -rf /usr/share/locale/*

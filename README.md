@@ -13,12 +13,12 @@ Latest stable Tvheadend release from Arch Linux AUR using Packer to compile.
 **Usage**
 ```
 docker run -d \
-	-p 9981:9981 \ 
-	--name=<container name> \
-	-v <path for data files>:/data \
-	-v <path for config files>:/config \
-	-v /etc/localtime:/etc/localtime:ro \
-	binhex/arch-tvheadend
+    -p 9981:9981 \ 
+    --name=<container name> \
+    -v <path for data files>:/data \
+    -v <path for config files>:/config \
+    -v /etc/localtime:/etc/localtime:ro \
+    binhex/arch-tvheadend
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
@@ -30,12 +30,12 @@ Please replace all user variables in the above command defined by <> with the co
 **Example**
 ```
 docker run -d \
-	-p 9981:9981 \ 
-	--name=tvheadend \
-	-v /apps/docker/tvheadend/recorded:/data \
-	-v /apps/docker/tvheadend:/config \
-	-v /etc/localtime:/etc/localtime:ro \
-	binhex/arch-tvheadend
+    -p 9981:9981 \ 
+    --name=tvheadend \
+    -v /apps/docker/tvheadend/recorded:/data \
+    -v /apps/docker/tvheadend:/config \
+    -v /etc/localtime:/etc/localtime:ro \
+    binhex/arch-tvheadend
 ```
 
 **Notes**
