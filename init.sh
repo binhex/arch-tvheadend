@@ -1,25 +1,31 @@
 #!/bin/bash
 
-# if user id not specified then use default of nobody 
+# if uid not specified then use default uid for user nobody 
 if [[ -z "${UID}" ]]; then
-	UID="nobody"
+	UID="99"
 fi
 
-# if group id not specifed then use default of users
+# if gid not specifed then use default gid for group users
 if [[ -z "${GID}" ]]; then
-	GID="users"
+	GID="100"
 fi
 
-echo "[info] User ID defined as ${UID}"
-echo "[info] Group ID defined as ${GID}"
+# set user nobody to specified user id (non unique)
+usermod -o -u "${UID}" nobody
+echo "[info] Env var UID  defined as ${UID}"
+
+# set group users to specified group id (non unique)
+groupmod -o -g "${GID}" users
+echo "[info] Env var GID defined as ${GID}"
+
 echo "[info] Setting permissions..."
 
 # set permissions for /config volume mapping
-chown -R $UID:$GID /config
+chown -R "${UID}":"${GID}" /config
 chmod -R 775 /config
 
 # set permissions inside container
-chown -R $UID:$GID /usr/bin/tvheadend /run
+chown -R "${UID}":"${GID}" /usr/bin/tvheadend /run
 chmod -R 775 /usr/bin/tvheadend /run
 
 echo "[info] Starting Supervisor..."

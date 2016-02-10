@@ -18,6 +18,7 @@ docker run -d \
     -v <path for data files>:/data \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    --device=<path to device> \
     -e UID=<user id for user> \
     -e GID=<group id for user> \
     binhex/arch-tvheadend
@@ -32,11 +33,12 @@ Please replace all user variables in the above command defined by <> with the co
 **Example**
 ```
 docker run -d \
-    -p 9981:9981 \ 
+    -p 9981:9981 \
     --name=tvheadend \
     -v /apps/docker/tvheadend/recorded:/data \
     -v /apps/docker/tvheadend:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    --device=/dev/dvb/adapter0 \
     -e UID=0 \
     -e GID=0 \
     binhex/arch-tvheadend
