@@ -50,14 +50,22 @@ docker run -d \
     binhex/arch-tvheadend
 ```
 
+**Notes**
+
 User ID (UID) and Group ID (GID) can be found by issuing the following command for the user you want to run the container as:-
 
 ```
 id <username>
 ```
 
-**Notes**
+Multiple adapters can be passed through by specifing the "--device" line multiple times, an example snipet for quad tuners:-
 
-N/A
+```
+    --device=/dev/dvb/adapter0 \
+    --device=/dev/dvb/adapter1 \
+    --device=/dev/dvb/adapter2 \
+    --device=/dev/dvb/adapter3 \
+```
+
 
 [Support forum](http://lime-technology.com/forum/index.php?topic=45837.0)
