@@ -13,7 +13,8 @@ Latest stable Tvheadend release from Arch Linux AUR using Packer to compile.
 **Usage**
 ```
 docker run -d \
-    -p 9981:9981 \ 
+    -p 9981:9981 \
+    -p 9982:9982 \
     --name=<container name> \
     -v <path for data files>:/data \
     -v <path for config files>:/config \
@@ -26,14 +27,19 @@ docker run -d \
 
 Please replace all user variables in the above command defined by <> with the correct values.
 
-**Access application**
+**Access HTTP**
 
 `http://<host ip>:9981`
+
+**Access HTSP**
+
+`http://<host ip>:9982`
 
 **Example**
 ```
 docker run -d \
     -p 9981:9981 \
+    -p 9982:9982 \
     --name=tvheadend \
     -v /apps/docker/tvheadend/recorded:/data \
     -v /apps/docker/tvheadend:/config \

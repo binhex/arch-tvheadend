@@ -5,10 +5,10 @@ MAINTAINER binhex
 ##################
 
 # add supervisor conf file for app
-ADD *.conf /etc/supervisor/conf.d/
+ADD setup/*.conf /etc/supervisor/conf.d/
 
 # add install and packer bash script
-ADD *.sh /root/
+ADD setup/*.sh /root/
 
 # install app
 #############
@@ -28,6 +28,9 @@ VOLUME /data
 
 # expose port for http
 EXPOSE 9981
+
+# expose port for htsp
+EXPOSE 9982
 
 # set permissions
 #################
