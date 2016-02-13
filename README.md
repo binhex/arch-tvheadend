@@ -19,9 +19,9 @@ docker run -d \
     -v <path for data files>:/data \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
-    --device=<path to device> \
-    -e UID=<user id for user> \
-    -e GID=<group id for user> \
+    --device=<path to tuner device> \
+    -e UID=<uid for user> \
+    -e GID=<gid for user> \
     binhex/arch-tvheadend
 ```
 
@@ -68,4 +68,4 @@ Multiple adapters can be passed through by specifing the "--device" line multipl
 ```
 
 
-[Support forum](http://lime-technology.com/forum/index.php?topic=45837.0)
+[Support forum](http://lime-technology.com/forum/index.php?topic=46575.0)
