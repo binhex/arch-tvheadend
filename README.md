@@ -67,5 +67,10 @@ Multiple adapters can be passed through by specifing the "--device" line multipl
     --device=/dev/dvb/adapter3 \
 ```
 
+Alternatively, with later versions of Docker you can use wildcards, example:-
+
+```
+    --device=/dev/dvb/adapter* \
+```
 
 [Support forum](http://lime-technology.com/forum/index.php?topic=46575.0)
