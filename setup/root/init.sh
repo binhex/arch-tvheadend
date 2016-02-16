@@ -38,8 +38,8 @@ else
 fi
 
 # set permissions inside container
-chown -R "${UID}":"${GID}" /usr/bin/tvheadend /run
-chmod -R 775 /usr/bin/tvheadend /run
+chown -R "${UID}":"${GID}" /usr/bin/tvheadend /run /home/nobody
+chmod -R 775 /usr/bin/tvheadend /run /home/nobody
 
 echo "[info] Starting Supervisor..."
 
