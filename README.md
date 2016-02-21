@@ -20,8 +20,8 @@ docker run -d \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
     --device=<path to tuner device> \
-    -e UID=<uid for user> \
-    -e GID=<gid for user> \
+    -e PUID=<uid for user> \
+    -e PGID=<gid for user> \
     binhex/arch-tvheadend
 ```
 
@@ -45,14 +45,14 @@ docker run -d \
     -v /apps/docker/tvheadend:/config \
     -v /etc/localtime:/etc/localtime:ro \
     --device=/dev/dvb/adapter0 \
-    -e UID=0 \
-    -e GID=0 \
+    -e PUID=0 \
+    -e PGID=0 \
     binhex/arch-tvheadend
 ```
 
 **Notes**
 
-User ID (UID) and Group ID (GID) can be found by issuing the following command for the user you want to run the container as:-
+User ID (PUID) and Group ID (PGID) can be found by issuing the following command for the user you want to run the container as:-
 
 ```
 id <username>
