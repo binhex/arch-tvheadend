@@ -7,7 +7,7 @@ set -e
 aur_helper="packer"
 
 # define aur packages
-aur_packages="libhdhomerun tvheadend"
+aur_packages="tvheadend"
 
 # create "makepkg-user" user for makepkg
 useradd -m -s /bin/bash makepkg-user

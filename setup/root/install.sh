@@ -4,7 +4,7 @@
 set -e
 
 # define pacman packages
-pacman_packages="base-devel git"
+pacman_packages="base-devel git wget"
 
 # install required pre-reqs for makepkg
 pacman -S --needed $pacman_packages --noconfirm
