@@ -8,7 +8,7 @@ Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android s
 
 **Build notes**
 
-Latest stable Tvheadend release from Arch Linux AUR using Packer to compile.
+Latest stable Tvheadend release from Arch Linux AUR.
 
 **Usage**
 ```
@@ -19,7 +19,7 @@ docker run -d \
     -v <path for data files>:/data \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
-    --device=<path to tuner device> \
+    --device=/dev/<tuner type> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
     binhex/arch-tvheadend
@@ -44,7 +44,7 @@ docker run -d \
     -v /apps/docker/tvheadend/recorded:/data \
     -v /apps/docker/tvheadend:/config \
     -v /etc/localtime:/etc/localtime:ro \
-    --device=/dev/dvb/adapter0 \
+    --device=/dev/dvb \
     -e PUID=0 \
     -e PGID=0 \
     binhex/arch-tvheadend
@@ -56,21 +56,6 @@ User ID (PUID) and Group ID (PGID) can be found by issuing the following command
 
 ```
 id <username>
-```
-
-Multiple adapters can be passed through by specifing the "--device" line multiple times, an example snipet for quad tuners:-
-
-```
-    --device=/dev/dvb/adapter0 \
-    --device=/dev/dvb/adapter1 \
-    --device=/dev/dvb/adapter2 \
-    --device=/dev/dvb/adapter3 \
-```
-
-Alternatively, with later versions of Docker you can use wildcards, example:-
-
-```
-    --device=/dev/dvb/adapter* \
 ```
 ___
 If you appreciate my work, then please consider buying me a beer  :D
