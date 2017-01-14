@@ -53,8 +53,14 @@ source /root/aur.sh
 # create file with contets of here doc
 cat <<'EOF' > /tmp/permissions_heredoc
 # set permissions inside container
-chown -R "${PUID}":"${PGID}" /dev/dvb /usr/bin/tvheadend /run /home/nobody
-chmod -R 775 /dev/dvb /usr/bin/tvheadend /run /home/nobody
+chown -R "${PUID}":"${PGID}" /usr/bin/tvheadend /run /home/nobody
+chmod -R 775 /usr/bin/tvheadend /run /home/nobody
+
+# if dvb adapter(s) passed through then set permissions
+if [[ -d /dev/dvb ]]; then
+	chown -R "${PUID}":"${PGID}" /dev/dvb
+	chmod -R 775 /dev/dvb
+fi
 
 EOF
 
