@@ -74,6 +74,12 @@ cat <<EOF > /tmp/permissions_heredoc
 chown -R "\${PUID}":"\${PGID}" ${install_paths}
 chmod -R 775 ${install_paths}
 
+# if dvb adapter(s) passed through then set permissions
+if [[ -d /dev/dvb ]]; then
+	chown -R "${PUID}":"${PGID}" /dev/dvb
+	chmod -R 775 /dev/dvb
+fi
+
 EOF
 
 # replace permissions placeholder string with contents of file (here doc)
