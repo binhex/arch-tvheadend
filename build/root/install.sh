@@ -76,7 +76,7 @@ chmod -R 775 ${install_paths}
 
 # if dvb adapter(s) passed through then set permissions
 if [[ -d /dev/dvb ]]; then
-	chown -R "${PUID}":"${PGID}" /dev/dvb
+	chown -R "\${PUID}":"\${PGID}" /dev/dvb
 	chmod -R 775 /dev/dvb
 fi
 
