@@ -19,7 +19,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /root/
 ####
 
 # define pacman packages
-pacman_packages="git wget"
+pacman_packages="git wget libx264 libvpx"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -39,7 +39,7 @@ source /root/aor.sh
 ####
 
 # define aur packages
-aur_packages="tvheadend comskip"
+aur_packages="ffmpeg-headless comskip tvheadend"
 
 # call aur install script (arch user repo)
 source /root/aur.sh
