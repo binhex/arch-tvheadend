@@ -39,7 +39,7 @@ source /root/aor.sh
 ####
 
 # define aur packages
-aur_packages="comskip tvheadend"
+aur_packages="comskip xmltv tvheadend"
 
 # call aur install script (arch user repo)
 source /root/aur.sh
