@@ -29,8 +29,15 @@ fi
 # aur packages
 ####
 
+# need to install this separately, as its now a requirement of 
+# package 'tvheadned' which fails unless this is already installed
+aur_packages="libavresample"
+
+# call aur install script (arch user repo)
+source /root/aur.sh
+
 # define aur packages
-aur_packages="libavresample comskip xmltv tvheadend"
+aur_packages="comskip xmltv tvheadend"
 
 # call aur install script (arch user repo)
 source /root/aur.sh
