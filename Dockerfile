@@ -27,12 +27,6 @@ RUN chmod +x /root/*.sh && \
 # docker settings
 #################
 
-# expose port for http
-EXPOSE 9981
-
-# expose port for htsp
-EXPOSE 9982
-
 # set permissions
 #################
 
