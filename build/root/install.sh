@@ -50,7 +50,7 @@ fi
 ####
 
 # define aur packages
-aur_packages="libavresample comskip xmltv tvheadend"
+aur_packages="libavresample xmltv tvheadend"
 
 # call aur install script (arch user repo)
 source aur.sh
