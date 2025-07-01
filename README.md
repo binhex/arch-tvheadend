@@ -1,18 +1,24 @@
-**Application**
+# Application
 
 [Tvheadend](https://tvheadend.org/)
 
-**Description**
+## Description
 
-Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. Tvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming. Multiple EPG sources are supported (over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML).
+Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android
+supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun
+as input sources. Tvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian)
+and SAT>IP streaming. Multiple EPG sources are supported (over-the-air DVB and
+ATSC including OpenTV DVB extensions, XMLTV, PyXML).
 
-**Build notes**
+## Build notes
 
 Latest stable Tvheadend release from Arch Linux AUR.
 
-**Usage**
-```
+## Usage
+
+```bash
 docker run -d \
+
     -p 9981:9981 \
     -p 9982:9982 \
     --name=<container name> \
@@ -23,22 +29,27 @@ docker run -d \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
+
     binhex/arch-tvheadend
+
 ```
 
-Please replace all user variables in the above command defined by <> with the correct values.
+Please replace all user variables in the above command defined by <> with the
+correct values.
 
-**Access HTTP**
+## Access HTTP
 
 `http://<host ip>:9981`
 
-**Access HTSP**
+## Access HTSP
 
 `http://<host ip>:9982`
 
-**Example**
-```
+## Example
+
+```bash
 docker run -d \
+
     -p 9981:9981 \
     -p 9982:9982 \
     --name=tvheadend \
@@ -49,16 +60,21 @@ docker run -d \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
+
     binhex/arch-tvheadend
-```
-
-**Notes**
-
-User ID (PUID) and Group ID (PGID) can be found by issuing the following command for the user you want to run the container as:-
 
 ```
+
+## Notes
+
+User ID (PUID) and Group ID (PGID) can be found by issuing the following command
+for the user you want to run the container as:-
+
+```bash
 id <username>
+
 ```
+
 ___
 If you appreciate my work, then please consider buying me a beer  :D
 
