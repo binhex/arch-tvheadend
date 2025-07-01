@@ -18,7 +18,6 @@ Latest stable Tvheadend release from Arch Linux AUR.
 
 ```bash
 docker run -d \
-
     -p 9981:9981 \
     -p 9982:9982 \
     --name=<container name> \
@@ -29,9 +28,7 @@ docker run -d \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
-
     binhex/arch-tvheadend
-
 ```
 
 Please replace all user variables in the above command defined by <> with the
@@ -49,7 +46,6 @@ correct values.
 
 ```bash
 docker run -d \
-
     -p 9981:9981 \
     -p 9982:9982 \
     --name=tvheadend \
@@ -60,9 +56,7 @@ docker run -d \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
-
     binhex/arch-tvheadend
-
 ```
 
 ## Notes
@@ -72,7 +66,6 @@ for the user you want to run the container as:-
 
 ```bash
 id <username>
-
 ```
 
 ___
