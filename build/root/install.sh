@@ -55,10 +55,10 @@ fi
 ####
 
 # define aur packages
-aur_packages="libavresample xmltv tvheadend"
+aur_packages="libavresample,xmltv,tvheadend"
 
 # call aur install script (arch user repo)
-source aur.sh
+aur.sh --aur-package "${aur_packages}"
 
 # container perms
 ####
