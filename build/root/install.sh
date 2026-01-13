@@ -55,7 +55,7 @@ fi
 ####
 
 # define aur packages
-aur_packages="libavresample,xmltv,tvheadend"
+aur_packages="xmltv,tvheadend-git"
 
 # call aur install script (arch user repo)
 aur.sh --aur-package "${aur_packages}"
